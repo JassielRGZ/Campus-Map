@@ -1,0 +1,42 @@
+/* Make the map container responsive */
+#map-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#campus-map {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pin {
+    position: absolute;
+    width: 2.5%; /* Make pin size responsive based on the map size */
+    height: auto;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 300px;
+}
+
+.close-button {
+    cursor: pointer;
+    float: right;
+}
