@@ -1,3 +1,5 @@
+/* styles.css */
+
 /* Make the map container responsive */
 #map-container {
     position: relative;
@@ -13,11 +15,31 @@
 
 .pin {
     position: absolute;
-    width: 2.5%; /* Make pin size responsive based on the map size */
+    width: 2.5%;
     height: auto;
     cursor: pointer;
+
+    /* Always animate with pulse */
+    animation: pulse 1.5s infinite;
 }
 
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -25,18 +47,78 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7); /* Darker, modern overlay */
+    z-index: 1000; /* Ensure it appears above other content */
 }
 
 .modal-content {
     background: #fff;
-    margin: 15% auto;
+    border-radius: 12px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    margin: 10% auto;
     padding: 20px;
-    width: 80%;
-    max-width: 300px;
+    width: 90%;
+    max-width: 400px; /* Restrict maximum width for better readability */
+    text-align: center; /* Center the content */
+    position: relative; /* For positioning the close button */
+    animation: slide-in 0.3s ease-out; /* Smooth appearance */
 }
 
 .close-button {
     cursor: pointer;
-    float: right;
+    font-size: 1.5em;
+    color: #666;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #000; /* Highlight close button on hover */
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.location-name {
+    font-size: 1.2em;
+    color: #555;
+    margin: 10px 0 20px;
+}
+
+#ticket-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #555;
+}
+
+#ticket-list li {
+    background: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: background 0.3s ease;
+}
+
+#ticket-list li:hover {
+    background: #efefef; /* Highlight item on hover */
+}
+
+/* Add a subtle animation for modal appearance */
+@keyframes slide-in {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
