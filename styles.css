@@ -155,7 +155,7 @@ h2 {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     #ticket-summary-card {
-        bottom: 5px;
+        bottom: 1px;
         left: 10px;
         padding: 10px;
         font-size: 0.9rem;
@@ -180,7 +180,7 @@ h2 {
 
 @media (max-width: 480px) {
     #ticket-summary-card {
-        bottom: 5px;
+        bottom: 1px;
         left: 5px;
         padding: 8px;
         font-size: 0.8rem;
