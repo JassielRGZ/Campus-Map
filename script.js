@@ -2,7 +2,7 @@
 
 const coordinates = {
     "Women's Hospital": { x: 650, y: 340 },
-    "Emergency Room": { x: 350, y: 340 },
+    "Emergency Room": { x: 260, y: 310 },
     "Medical Office Building": { x: 1240, y: 525 },
     "Plastics and Reconstructive Surgery": { x: 1230, y: 510 },
     "Orthopedic Sports and Therapy Institute Clinic": { x: 1020, y: 350 },
@@ -10,7 +10,12 @@ const coordinates = {
     "GME Family Medicine": { x:940, y: 510},
     "Women's Cafeteria": { x: 610, y: 340 },
     "Human Resources": { x: 700, y: 50 },
-    "Diabetes and Endocrinology Institute": { x: 910, y: 200 }
+    "Diabetes and Endocrinology Institute": { x: 910, y: 170 },
+    "Urology Institute": { x: 840, y: 170 },
+    "Radiology - Main Hospital": { x: 400, y: 310 },
+    "Medical Office Building 1st Floor": { x: 1250, y: 520 },
+    "Pediatric Clinic": { x: 1000, y: 350 }
+    // ...other locations
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -41,6 +46,7 @@ function fetchExcelData() {
             const tickets = XLSX.utils.sheet_to_json(worksheet);
 
             const locationTickets = {};
+            let totalTickets = 0;
 
             tickets.forEach(ticket => {
                 const locationName = ticket["Location"];
@@ -51,8 +57,12 @@ function fetchExcelData() {
                         locationTickets[locationName] = [];
                     }
                     locationTickets[locationName].push(ticketID);
+                    totalTickets++; // Increment total tickets
                 }
             });
+
+            // Update the total tickets card
+            document.getElementById("total-tickets").textContent = totalTickets;
 
             Object.entries(locationTickets).forEach(([locationName, ticketIDs]) => {
                 const { x, y } = coordinates[locationName];
@@ -70,11 +80,8 @@ function createPin(locationName, originalX, originalY, ticketIDs) {
     pin.classList.add("pin");
     pin.dataset.originalX = originalX;
     pin.dataset.originalY = originalY;
-    pin.dataset.locationName = locationName; // Store Location Name
+    pin.dataset.locationName = locationName;
     pin.dataset.tickets = JSON.stringify(ticketIDs);
-
-    pin.setAttribute("aria-label", `Location: ${locationName}, Tickets: ${ticketIDs.join(", ")}`);
-    pin.setAttribute("role", "button");
 
     pin.addEventListener("click", () => {
         showTicketInfo(locationName, ticketIDs);
@@ -87,8 +94,8 @@ function updatePinPositions() {
     const map = document.getElementById("campus-map");
     const mapWidth = map.offsetWidth;
     const mapHeight = map.offsetHeight;
-    const originalMapWidth = 1399; // Adjust to your original map's width
-    const originalMapHeight = 683; // Adjust to your original map's height
+    const originalMapWidth = 1399;
+    const originalMapHeight = 683;
 
     const scaleX = mapWidth / originalMapWidth;
     const scaleY = mapHeight / originalMapHeight;
@@ -107,7 +114,7 @@ function showTicketInfo(locationName, ticketIDs) {
     const locationNameElement = document.getElementById("location-name");
     ticketList.innerHTML = "";
 
-    locationNameElement.textContent = `Location: ${locationName}`; // Display Location
+    locationNameElement.textContent = `Location: ${locationName}`;
 
     ticketIDs.forEach(id => {
         const listItem = document.createElement("li");
