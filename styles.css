@@ -18,8 +18,6 @@
     width: 2.5%;
     height: auto;
     cursor: pointer;
-
-    /* Always animate with pulse */
     animation: pulse 1.5s infinite;
 }
 
@@ -39,6 +37,34 @@
     }
 }
 
+/* Modern Card for Total Tickets */
+#ticket-summary-card {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    z-index: 999;
+}
+
+#ticket-summary-card p {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#ticket-summary-card h3 {
+    margin: 10px 0 0;
+    font-size: 1.5rem;
+    color: #0078D4; /* Blue accent color */
+}
+
 /* Modal Styles */
 .modal {
     display: none;
@@ -47,21 +73,21 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Darker, modern overlay */
-    z-index: 1000; /* Ensure it appears above other content */
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
 }
 
 .modal-content {
     background: #fff;
-    border-radius: 12px; /* Rounded corners for modern look */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     margin: 10% auto;
     padding: 20px;
     width: 90%;
-    max-width: 400px; /* Restrict maximum width for better readability */
-    text-align: center; /* Center the content */
-    position: relative; /* For positioning the close button */
-    animation: slide-in 0.3s ease-out; /* Smooth appearance */
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    animation: slide-in 0.3s ease-out;
 }
 
 .close-button {
@@ -76,7 +102,7 @@
 }
 
 .close-button:hover {
-    color: #000; /* Highlight close button on hover */
+    color: #000;
 }
 
 h2 {
@@ -108,7 +134,7 @@ h2 {
 }
 
 #ticket-list li:hover {
-    background: #efefef; /* Highlight item on hover */
+    background: #efefef;
 }
 
 /* Add a subtle animation for modal appearance */
