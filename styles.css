@@ -180,7 +180,7 @@ h2 {
 
 @media (max-width: 480px) {
     #ticket-summary-card {
-        bottom: 5px;
+        bottom: 2px;
         left: 5px;
         padding: 8px;
         font-size: 0.8rem;
