@@ -1,18 +1,18 @@
 // script.js
 
 const coordinates = {
-    "Women's Hospital": { x: 650, y: 340 },
-    "Emergency Room": { x: 260, y: 310 },
-    "Medical Office Building": { x: 1240, y: 525 },
-    "Plastics and Reconstructive Surgery": { x: 1230, y: 510 },
-    "Orthopedic Sports and Therapy Institute Clinic": { x: 1020, y: 350 },
-    "Oncology Institute": { x: 720, y: 160 },
-    "GME Family Medicine": { x:940, y: 510},
+    "Women's Hospital": { x: 115, y: 260 },
+    "Emergency Room": { x: 480, y: 445 },
+    "Medical Office Building": { x: 240, y: 360},
+    "Plastics and Reconstructive Surgery": { x: 1000, y: 70 },
+    "Orthopedic Sports and Therapy Institute Clinic": { x: 1270, y: 205},
+    "Oncology Institute": { x: 280, y: 130 },
+    "GME Family Medicine": { x:880, y: 510},
     "Women's Cafeteria": { x: 610, y: 340 },
-    "Human Resources": { x: 700, y: 50 },
-    "Diabetes and Endocrinology Institute": { x: 910, y: 170 },
-    "Urology Institute": { x: 840, y: 170 },
-    "Radiology - Main Hospital": { x: 400, y: 310 },
+    "Human Resources": { x: 500, y: 30 },
+    "Diabetes and Endocrinology Institute": { x: 1140, y: 130},
+    "Urology Institute": { x: 880, y: 400 },
+    "Radiology - Main Hospital": { x: 450, y: 230 },
     "Medical Office Building 1st Floor": { x: 1250, y: 520 },
     "Pediatric Clinic": { x: 1000, y: 350 }
     // ...other locations
